@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button onclick="start()">Start</button>
+
+<button onclick="end()">End</button>
+<p id="start"></p>
+<p id="text"></p>
+<p id="end"></p>
+<p id="elapse"></p>
+<script>
+var startTime, endTime;
+
+function start() {
+  startTime = new Date();
+   document.getElementById('start').innerHTML = "Start: "  + startTime;
+   document.getElementById('text').innerHTML = "Time Started ";
+};
+
+function end() {
+  endTime = new Date();
+  var timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 60000;
+  
+ 
+
+  // get seconds 
+  min = timeDiff.toFixed(2);
+  document.getElementById('end').innerHTML = "End: "  + endTime;
+   document.getElementById('elapse').innerHTML = "Elapse Time: " + min + " mins";
+  //console.log(seconds + " seconds");
+}
+</script>
+
+</body>
+</html> 
